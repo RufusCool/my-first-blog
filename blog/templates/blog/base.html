@@ -9,7 +9,11 @@
     </head>
 <body>
     <div class="page-header">
-        <h1><a href="/">Conteúdo Educacional</a></h1>
+	 <!-- Link para a página com o formulário + Autenticação -->
+	 {% if user.is_authenticated %}
+	 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+         {% endif %}
+	 <h1><a href="/">Conteúdo Educacional</a></h1>
     </div>
     <div class="content container">
         <div class="row">
